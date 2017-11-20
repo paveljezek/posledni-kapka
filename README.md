@@ -1,2 +1,2 @@
-# posledni_kapka
+# Poslední kapka
 Platformer game made in Unity
