@@ -5,22 +5,32 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	public int currentGold;
-	public Text goldText;
+	public int currentOkurky;
+	public Text okurkyText;
+	public Transform Spawnpoint;
+	public GameObject Prefab;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	}
-	
-	public void AddGold(int goldToAdd)
+	void Update () 
 	{
-		currentGold += goldToAdd;
-		goldText.text = "Gold: " + currentGold;
+		if (currentOkurky == 40)
+		{
+			Instantiate(Prefab, Spawnpoint.position, Spawnpoint. rotation);
+			Destroy(gameObject);
+		}	
 	}
 	
+	
+	public void AddOkurky(int okurkyToAdd)
+	{
+		currentOkurky += okurkyToAdd;
+		okurkyText.text = "Okurky: " + currentOkurky;
+	}
+
 }
