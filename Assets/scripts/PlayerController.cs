@@ -16,10 +16,13 @@ public class PlayerController : MonoBehaviour {
 	private float knockBackCounter;
 	bool canDoubleJump = false;
 
+	public Animator anim;
+
 	// Use this for initialization
 	void Start () {
 	
 	controller = GetComponent<CharacterController>();
+	//anim = GetComponent<Animator>();
 	
 	}
 	
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			//pohyb
 			moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, 0f);
+
 			
 			//doublejump
 			if (Input.GetButtonDown("Jump") && !controller.isGrounded && canDoubleJump == true)
@@ -51,6 +55,11 @@ public class PlayerController : MonoBehaviour {
 			}
 	
 			moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+			Vector3 animDirection = Vector3.Normalize(moveDirection);
+			anim.SetFloat("Move", animDirection.x);
+			anim.SetFloat("Jump", animDirection.y);
+			Debug.Log(animDirection.x + " ; " + animDirection.y + " ; " + animDirection.z);
+
 	
 			controller.Move(moveDirection * Time.deltaTime);
 					

@@ -125,6 +125,9 @@
      <None Include="Assets\Fungus\Thirdparty\FungusLua\Resources\Lua\fungus.txt" />
      <None Include="Assets\Fungus\Docs\CHANGELOG.txt" />
      <None Include="Assets\Fungus\Thirdparty\Reorderable List Field\Editor\Editor.ReorderableList.xml" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>/home/dotsirup/Documents/game/posledni-kapka/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/home/dotsirup/apps/unity/unity-editor-2017.2.0b11/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>
