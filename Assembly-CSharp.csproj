@@ -578,7 +578,6 @@
      <Compile Include="Assets\scripts\HealthManager.cs" />
      <Compile Include="Assets\scripts\HurtPlayer.cs" />
      <Compile Include="Assets\scripts\MoveScene.cs" />
-     <Compile Include="Assets\scripts\PickableGold.cs" />
      <Compile Include="Assets\scripts\PickableOkurky.cs" />
      <Compile Include="Assets\scripts\PickableŠkeble.cs" />
      <Compile Include="Assets\scripts\PickableZuby.cs" />
