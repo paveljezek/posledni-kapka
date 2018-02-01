@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed;
 	public float jumpForce;
-	public CharacterController controller;
+	CharacterController controller;
 	public float gravityScale;
 
 	private Vector3 moveDirection;
@@ -58,7 +58,12 @@ public class PlayerController : MonoBehaviour {
 			Vector3 animDirection = Vector3.Normalize(moveDirection);
 			anim.SetFloat("Move", animDirection.x);
 			anim.SetFloat("Jump", animDirection.y);
-			Debug.Log(animDirection.x + " ; " + animDirection.y + " ; " + animDirection.z);
+			//Debug.Log(moveDirection.x + " ; " + moveDirection.y + " ; " + moveDirection.z);
+			if(moveDirection.x < 0) {
+				transform.rotation = new Quaternion(0,0,0,0);
+			} else if(moveDirection.x > 0) {
+				transform.rotation = new Quaternion(0,180,0,0);
+			}
 
 	
 			controller.Move(moveDirection * Time.deltaTime);

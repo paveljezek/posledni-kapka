@@ -7,12 +7,14 @@ public class HealthManager : MonoBehaviour {
 	public int maxHealth;
 	public int currentHealth;
 	
-	public PlayerController thePlayer;
+	PlayerController thePlayer;
+	GameObject playerModel;
 	
 	public float InvincibilityLength;
 	private float InvincibilityCounter;
 	
 	public Renderer playerRenderer;
+	public Animator anim;
 	private float flashCounter;
 	public float flashLength = 0.1f;
 	
@@ -25,6 +27,7 @@ public class HealthManager : MonoBehaviour {
 	void Start () {
 		currentHealth = maxHealth;
 		thePlayer = FindObjectOfType<PlayerController>();
+		playerModel = GameObject.FindGameObjectsWithTag("PlayerModel")[0];
 		
 		respawnPoint = thePlayer.transform.position;
 	}
@@ -38,12 +41,14 @@ public class HealthManager : MonoBehaviour {
 			flashCounter -= Time.deltaTime;
 			if (flashCounter <= 0)
 			{
-				playerRenderer.enabled = !playerRenderer.enabled;
+				//playerRenderer.enabled = !playerRenderer.enabled;
+				playerModel.SetActive(!playerModel.activeSelf);
 				flashCounter = flashLength;
 			}
 			if (InvincibilityCounter <= 0)
 			{
-				playerRenderer.enabled = true;
+				//playerRenderer.enabled = true;
+				playerModel.SetActive(true);
 			}
 				
 		}
@@ -58,6 +63,7 @@ public class HealthManager : MonoBehaviour {
 			
 			if (currentHealth <= 0)
 			{
+				anim.SetBool("Dead", true);
 				Respawn();
 			} else
 			
@@ -65,8 +71,9 @@ public class HealthManager : MonoBehaviour {
 				thePlayer.Knockback(direction);
 			
 				InvincibilityCounter = InvincibilityLength;
-				playerRenderer.enabled = false;
-				flashCounter = flashLength;
+				anim.SetTrigger("Hurt");
+				//playerRenderer.enabled = false;
+				//flashCounter = flashLength;
 			}
 		}
 	}	
