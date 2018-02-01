@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerModel
+  - Flowchart
   layers:
   - Default
   - TransparentFX
