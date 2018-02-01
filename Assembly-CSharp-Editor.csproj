@@ -107,8 +107,10 @@
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Editor\MenuItems.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\LineEndings\Editor\LineEndingsEditMenu.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Editor\SfxrGenerator.cs" />
+     <Compile Include="Assets\Simple Health Bar\Editor\SimpleHealthBarEditor.cs" />
      <None Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\JSON\readme.txt" />
      <None Include="Assets\Fungus\Docs\README.txt" />
+     <None Include="Assets\Simple Health Bar\README.txt" />
      <None Include="Assets\Fungus\Thirdparty\LeanTween\ReadMe.txt" />
      <None Include="Assets\Fungus\Fonts\Exo2\OFL.txt" />
      <None Include="Assets\Fungus\Docs\LICENSE.txt" />

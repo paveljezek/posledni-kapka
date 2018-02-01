@@ -584,8 +584,10 @@
      <Compile Include="Assets\scripts\PickableZuby.cs" />
      <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\SpawnObject.cs" />
+     <Compile Include="Assets\Simple Health Bar\Scripts\SimpleHealthBar.cs" />
      <None Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\JSON\readme.txt" />
      <None Include="Assets\Fungus\Docs\README.txt" />
+     <None Include="Assets\Simple Health Bar\README.txt" />
      <None Include="Assets\Fungus\Thirdparty\LeanTween\ReadMe.txt" />
      <None Include="Assets\Fungus\Fonts\Exo2\OFL.txt" />
      <None Include="Assets\Fungus\Docs\LICENSE.txt" />
