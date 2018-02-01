@@ -9,6 +9,7 @@ public class HealthManager : MonoBehaviour {
 	
 	PlayerController thePlayer;
 	GameObject playerModel;
+	SimpleHealthBar healthBar;
 	
 	public float InvincibilityLength;
 	private float InvincibilityCounter;
@@ -28,6 +29,8 @@ public class HealthManager : MonoBehaviour {
 		currentHealth = maxHealth;
 		thePlayer = FindObjectOfType<PlayerController>();
 		playerModel = GameObject.FindGameObjectsWithTag("PlayerModel")[0];
+		healthBar = SimpleHealthBar.GetSimpleHealthBar("HealthIndicator");
+		Debug.Log(healthBar.gameObject.name);
 		
 		respawnPoint = thePlayer.transform.position;
 	}
@@ -63,11 +66,13 @@ public class HealthManager : MonoBehaviour {
 			
 			if (currentHealth <= 0)
 			{
+				healthBar.UpdateBar(0, maxHealth);
 				anim.SetBool("Dead", true);
 				Respawn();
 			} else
 			
 			{
+				healthBar.UpdateBar(currentHealth, maxHealth);
 				thePlayer.Knockback(direction);
 			
 				InvincibilityCounter = InvincibilityLength;
@@ -102,6 +107,7 @@ public class HealthManager : MonoBehaviour {
 			thePlayer.gameObject.SetActive(true);
 			thePlayer.transform.position = respawnPoint;
 			currentHealth = maxHealth;
+			healthBar.UpdateBar(currentHealth, maxHealth);
 			
 			InvincibilityCounter = InvincibilityLength;
 			playerRenderer.enabled = false;
