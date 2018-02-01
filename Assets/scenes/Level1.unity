@@ -37539,11 +37539,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 302.96713, y: 39.68853}
+  scrollPos: {x: 361.6228, y: 144.42618}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.6099999
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -37551,9 +37551,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1163393202}
-  selectedCommands:
-  - {fileID: 1163393212}
+  - {fileID: 1163393208}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -37607,7 +37606,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 109
     y: 87
-    width: 127.049194
+    width: 127
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -56753,7 +56752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1713249994
 Transform:
   m_ObjectHideFlags: 0
