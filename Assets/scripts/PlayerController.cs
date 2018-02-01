@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
 	public Animator anim;
 
+	Fungus.Flowchart[] fcharts;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -32,25 +34,37 @@ public class PlayerController : MonoBehaviour {
 		
 		if (knockBackCounter <= 0)
 		{
-			//pohyb
-			moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, 0f);
-
-			
-			//doublejump
-			if (Input.GetButtonDown("Jump") && !controller.isGrounded && canDoubleJump == true)
+			fcharts = GameObject.FindObjectsOfType<Fungus.Flowchart>() as Fungus.Flowchart[];
+			bool move = true;
+			foreach (Fungus.Flowchart f in fcharts)
 			{
-					moveDirection.y = jumpForce;
-					canDoubleJump = false;
+				if(f.HasExecutingBlocks()) {
+					move = false;
+					break;
+				}
 			}
-			
-			//jump
-			else if (controller.isGrounded)
-			{	
-				moveDirection.y = 0f;
-				if (Input.GetButtonDown("Jump"))
+
+			//pohyb
+			if(move) {
+				moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, 0f);
+
+				
+				//doublejump
+				if (Input.GetButtonDown("Jump") && !controller.isGrounded && canDoubleJump == true)
 				{
-					moveDirection.y = jumpForce;
-					canDoubleJump = true;
+						moveDirection.y = jumpForce;
+						canDoubleJump = false;
+				}
+				
+				//jump
+				else if (controller.isGrounded)
+				{	
+					moveDirection.y = 0f;
+					if (Input.GetButtonDown("Jump"))
+					{
+						moveDirection.y = jumpForce;
+						canDoubleJump = true;
+					}
 				}
 			}
 	
