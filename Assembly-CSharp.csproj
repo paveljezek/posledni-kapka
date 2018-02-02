@@ -574,6 +574,7 @@
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrSynth.cs" />
      <Compile Include="Assets\scripts\ButtonManager.cs" />
      <Compile Include="Assets\scripts\CameraController.cs" />
+     <Compile Include="Assets\scripts\ControlDisable.cs" />
      <Compile Include="Assets\scripts\DestroyOverTime.cs" />
      <Compile Include="Assets\scripts\GameManager.cs" />
      <Compile Include="Assets\scripts\HealthManager.cs" />

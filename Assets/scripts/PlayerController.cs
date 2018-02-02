@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
 	public Animator anim;
 
+	bool canMove = true;
+
 	Fungus.Flowchart[] fcharts;
 
 	// Use this for initialization
@@ -34,18 +36,8 @@ public class PlayerController : MonoBehaviour {
 		
 		if (knockBackCounter <= 0)
 		{
-			fcharts = GameObject.FindObjectsOfType<Fungus.Flowchart>() as Fungus.Flowchart[];
-			bool move = true;
-			foreach (Fungus.Flowchart f in fcharts)
-			{
-				if(f.HasExecutingBlocks()) {
-					move = false;
-					break;
-				}
-			}
-
 			//pohyb
-			if(move) {
+			if(canMove) {
 				moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, 0f);
 
 				
@@ -97,6 +89,10 @@ public class PlayerController : MonoBehaviour {
 		
 		moveDirection = direction * knockBackForce;
 		moveDirection.y = knockBackForce;
+	}
+
+	public void setCanMove(bool move) {
+		canMove = move;
 	}
 	
 	
