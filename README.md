@@ -12,5 +12,5 @@ Petr Eric Hofmann - game design, 2D artist, story
 
 Pavel Ježek - game design, scripting
 
-
+![Team at work](team.jpg)
 
