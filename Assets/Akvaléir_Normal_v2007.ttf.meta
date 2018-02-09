@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6eb8883adb161cb4c9aeece912dd16c1
+timeCreated: 1514832329
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Akval?ir
+  fontNames:
+  - Akval?ir
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
