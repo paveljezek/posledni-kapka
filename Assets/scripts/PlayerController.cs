@@ -60,11 +60,10 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 	
-			moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+			moveDirection.y += ((Physics.gravity.y * gravityScale) * Time.deltaTime);
 			Vector3 animDirection = Vector3.Normalize(moveDirection);
 			anim.SetFloat("Move", animDirection.x);
 			anim.SetFloat("Jump", animDirection.y);
-			//Debug.Log(moveDirection.x + " ; " + moveDirection.y + " ; " + moveDirection.z);
 			if(moveDirection.x < 0) {
 				transform.rotation = new Quaternion(0,0,0,0);
 			} else if(moveDirection.x > 0) {
@@ -76,13 +75,13 @@ public class PlayerController : MonoBehaviour {
 					
 			
 		} else
-			
 		{
 			knockBackCounter = knockBackCounter - Time.deltaTime;
 		}
 		
 	}
 	
+	//TODO: edit according to delta time
 	public void Knockback(Vector3 direction)
 	{
 		knockBackCounter = knockBackTime;
